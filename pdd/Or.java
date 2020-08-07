@@ -32,11 +32,6 @@ public class Or {
                     if ((each | target) == each){
                         temp |= each;
                     }
-                    if (each == target){
-                        temp = target;
-                        break;
-                    }
-                    if (target == temp) break;
                 }
                 if (temp == target){
                     System.out.println("YES");
