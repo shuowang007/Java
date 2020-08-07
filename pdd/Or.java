@@ -21,24 +21,24 @@ public class Or {
         Scanner sc = new Scanner(System.in);
         int q = sc.nextInt();
         Set<Integer> set = new HashSet<>();
-        while (q-->0){
+        while (q-- > 0){
             int flag = sc.nextInt();
             int target = sc.nextInt();
-            if (flag==1){
+            if (flag == 1){
                 set.add(target);
             }else {
                 int temp = 0;
                 for (Integer each: set){
-                    if ((each&target)==each){
+                    if ((each | target) == each){
                         temp |= each;
                     }
-                    if (each==target){
+                    if (each == target){
                         temp = target;
                         break;
                     }
-                    if (target==temp) break;
+                    if (target == temp) break;
                 }
-                if (temp==target){
+                if (temp == target){
                     System.out.println("YES");
                     set.add(target);
                 }else {
